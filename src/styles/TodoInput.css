@@ -1,0 +1,30 @@
+.todo-input-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.task-input {
+  flex: 1;
+  padding: 10px;
+  background-color: #2e2e2e;
+  border: 1px solid #555;
+  border-radius: 5px;
+  color: #e0e0e0;
+  font-size: 16px;
+}
+
+.add-task-button {
+  padding: 10px 20px;
+  background-color: #2979ff;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.add-task-button:hover {
+  background-color: #1565c0;
+}
