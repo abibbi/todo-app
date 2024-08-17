@@ -1,10 +1,11 @@
 import React from 'react';
 import TodoItem from './TodoItem';
 import '../styles/TodoList.css';
+import TodoInput from './TodoInput';
 
-function TodoList() {
+function TodoList({task}) {
   
-  const tasks = ['Test','Test','Test'];
+  const tasks = [];
 
   return (
     <div className="todo-list">
