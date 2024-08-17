@@ -1,0 +1,49 @@
+.todo-item {
+  display: flex;
+  justify-content: space-between; 
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #2e2e2e;
+  border-radius: 5px;
+}
+
+.task-name {
+  flex: 1; 
+  font-size: 18px;
+  color: #e0e0e0;
+}
+
+.task-actions {
+  display: flex;
+  gap: 10px; 
+}
+
+.task-actions button {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.complete-task-button {
+  color: #4caf50; 
+}
+
+.edit-task-button {
+  color: #ffeb3b; 
+}
+
+.delete-task-button {
+  color: #f44336; 
+
+.complete-task-button:hover {
+  background-color: rgba(76, 175, 80, 0.1);
+}
+
+.edit-task-button:hover {
+  background-color: rgba(255, 235, 59, 0.1);
+}
+
+.delete-task-button:hover {
+  background-color: rgba(244, 67, 54, 0.1);
+}}
