@@ -5,13 +5,17 @@ import TodoList from './components/TodoList';
 import './styles/App.css';
 
 function App() {
-  const [inputValue, setInputValue] = useState('');
+  const [tasks, setTasks] = useState([]);
 
+  const addTask = (task) => {
+    setTasks([...tasks, task]);
+  };
   return (
     <div className="App">
-        <Header />
-        <TodoInput inputValue={inputValue} setInputValue={setInputValue}  />
-        <TodoList className="list-item" />
+      <Header />
+      <TodoInput addTask={addTask} />
+      <TodoList tasks={tasks} />
+  
         
     </div>
   );

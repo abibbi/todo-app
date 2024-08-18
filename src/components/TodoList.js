@@ -1,12 +1,8 @@
 import React from 'react';
 import TodoItem from './TodoItem';
 import '../styles/TodoList.css';
-import TodoInput from './TodoInput';
 
-function TodoList({task}) {
-  
-  const tasks = [];
-
+function TodoList({ tasks }) {
   return (
     <div className="todo-list">
       {tasks.map((task, index) => (

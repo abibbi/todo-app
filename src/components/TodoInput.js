@@ -1,32 +1,35 @@
-import React, {useState}from 'react';
+import React, { useState } from 'react';
 import '../styles/TodoInput.css';
-import TodoList from './TodoList';
 
-function TodoInput() {
-  //Declares a state variable to ghold the input value
+function TodoInput({ addTask }) {
   const [inputValue, setInputValue] = useState('');
 
-  // Function to handle the input change
   const handleChange = (event) => {
     setInputValue(event.target.value);
-    console.log(inputValue)
   };
 
+  const handleAddTask = () => {
+    if (inputValue.trim()) {
+      addTask(inputValue);
+      setInputValue(''); // Clear the input field after adding the task
+    }
+  };
 
   return (
     <div className="todo-input-container">
-      <input 
-      value={inputValue}
-      onChange={handleChange} 
-      type="text" 
-      className="task-input" 
-      placeholder="Enter a task..." 
+      <input
+        value={inputValue}
+        onChange={handleChange}
+        type="text"
+        className="task-input"
+        placeholder="Enter a task..." 
       />
-
       <button 
-      className="add-task-button"
-      onClick={handleChange}
-      >Add</button>
+        className="add-task-button"
+        onClick={handleAddTask}
+      >
+        Add
+      </button>
     </div>
   );
 }
