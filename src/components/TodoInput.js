@@ -12,6 +12,7 @@ function TodoInput({ addTask }) {
     if (inputValue.trim()) {
       addTask(inputValue);
       setInputValue(''); // Clear the input field after adding the task
+      console.log("this is input value " + inputValue)
     }
   };
 

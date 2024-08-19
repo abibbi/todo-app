@@ -9,6 +9,7 @@ function App() {
 
   const addTask = (task) => {
     setTasks([...tasks, task]);
+    console.log('this is our task on app.js ' + tasks)
   };
   return (
     <div className="App">
