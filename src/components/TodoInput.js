@@ -1,11 +1,13 @@
 import React, { useState, useRef, useEffect } from 'react';
 import '../styles/TodoInput.css';
+import { FaPlus } from 'react-icons/fa';
 
 function TodoInput({ addTask }) {
   const [inputValue, setInputValue] = useState('');
   const [error, setError] = useState('');
   const inputRef = useRef(null);
   const MAX_LENGTH = 50;
+  const [priority, setPriority] = useState('medium');
 
   useEffect(() => {
     inputRef.current.focus();
@@ -23,8 +25,9 @@ function TodoInput({ addTask }) {
 
   const handleAddTask = () => {
     if (inputValue.trim()) {
-      addTask(inputValue);
+      addTask({ text: inputValue, priority });
       setInputValue('');
+      setPriority('medium');
       setError('');
     } else {
       setError('Task cannot be empty');
@@ -48,11 +51,20 @@ function TodoInput({ addTask }) {
         className="task-input"
         placeholder="Enter a task..."
       />
+      <select
+        value={priority}
+        onChange={(e) => setPriority(e.target.value)}
+        className="priority-select"
+      >
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
+      </select>
       <button 
         className="add-task-button"
         onClick={handleAddTask}
       >
-        Add
+        <FaPlus /> Add
       </button>
       {error && <p className="error-message">{error}</p>}
       <p className="char-count">{inputValue.length}/{MAX_LENGTH}</p>
